@@ -19,6 +19,7 @@
   "homepage": "https://gitlab.com/levydanqc/travail-2-overwatch#readme",
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "bootstrap-icons": "^1.4.0",
     "node-sass": "^5.0.0"
   }
 }
