@@ -1,1 +1,161 @@
 // 'npm run scss' for live compiling
+
+$primary: #f99e1a;
+$primary-faded: #f9a01a9f;
+$secondary: #43484c;
+$blue: #218ffe;
+$tertiary: #405275;
+$gray: #2d2f34;
+$light: #e9ecef;
+$fakeblack: #232323;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// FONTS
+@font-face {
+  src: url("../fonts/futura/futura\ light\ bt.ttf");
+  font-family: "Futura";
+}
+@font-face {
+  src: url("../fonts/big_noodle.ttf");
+  font-family: "Bignoodle";
+}
+@font-face {
+  src: url("../fonts/big_noodle_oblique.ttf");
+  font-family: "Bignoodle_Tilt";
+}
+// Fin fonts
+
+// Classes générales
+body {
+  background-image: url("../assets/img/background/background.jpg");
+  background-repeat: no-repeat;
+}
+
+body * {
+  color: $fakeblack;
+  font-family: "Bignoodle_Tilt";
+  font-size: 2rem;
+}
+
+// Mixins
+@mixin center-text {
+  width: fit-content;
+  margin: auto;
+}
+// Fin mixins
+
+.link {
+  text-decoration: none;
+  transition: color 0.5s;
+  &:hover {
+    text-decoration: underline;
+    color: $primary;
+  }
+  &:active {
+    text-decoration: none;
+    color: $blue;
+  }
+  &:focus {
+    @extend .border;
+    @extend .border-primary;
+    @extend .rounded;
+  }
+}
+// Fin classes générales
+
+// Header
+header {
+  max-width: 100%;
+}
+
+.navbar {
+  @extend .px-5;
+}
+
+.navbar a {
+  color: $fakeblack;
+}
+
+nav form input {
+  font-size: 2rem !important;
+}
+
+.navbar-prime {
+  width: 100%;
+  top: 0;
+  & ul {
+    margin: auto;
+  }
+}
+
+.navbar-sec {
+  & .nav-item {
+    @extend .px-2;
+    @extend .py-1;
+    background-color: $primary-faded;
+  }
+}
+
+.nav-link {
+  @extend .mx-2;
+}
+// Fin header
+
+// Modal
+.modal a {
+  font-size: 1.1rem;
+  font-family: "Futura";
+  &:visited {
+    color: $tertiary;
+  }
+}
+
+// Fin modal
+
+// Main
+main {
+  max-width: 100%;
+}
+
+.logo {
+  width: 3rem;
+}
+
+.carousel img {
+  height: 500px;
+  width: auto;
+  margin: auto;
+}
+
+.carousel-title {
+  @extend .px-3;
+  @extend .py-1;
+  @extend .rounded;
+  @extend .bg-primary;
+  @include center-text;
+  color: $light;
+}
+
+.carousel-type-d {
+  background-color: $danger;
+  @extend .rounded-pill;
+  @extend .px-3;
+  @include center-text;
+  color: $light;
+}
+.carousel-type-s {
+  background-color: $blue;
+  @extend .rounded-pill;
+  @extend .px-3;
+  @include center-text;
+  color: $light;
+}
+.carousel-type-t {
+  background-color: $gray-800;
+  @extend .rounded-pill;
+  @extend .px-3;
+  @include center-text;
+  color: $light;
+}
+// Fin main
