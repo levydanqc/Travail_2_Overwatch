@@ -197,3 +197,27 @@ main * {
 }
 
 // Fin main
+
+// Footer
+footer {
+  & a {
+    @extend .text-muted;
+    @extend .text-uppercase;
+    font-size: 1rem;
+    &:hover {
+      color: $fakeblack !important;
+    }
+    @extend .col-md;
+    @extend .my-2;
+  }
+  & blockquote {
+    @extend .mt-5;
+    @extend .mb-0;
+    @extend .py-2;
+  }
+  & section *{
+    @extend .mx-2;
+    width: 2.5rem;
+  }
+}
+// Fin footter
