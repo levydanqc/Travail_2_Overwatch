@@ -8,6 +8,7 @@ $tertiary: #405275;
 $gray: #2d2f34;
 $light: #e9ecef;
 $fakeblack: #232323;
+$enable-responsive-font-sizes: true;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
@@ -34,8 +35,8 @@ body {
 
 body * {
   color: $fakeblack;
-  font-family: "Bignoodle_Tilt";
-  font-size: 2rem;
+  font-family: "Futura";
+  font-size: 1.1rem;
 }
 
 // Mixins
@@ -43,11 +44,16 @@ body * {
   width: fit-content;
   margin: auto;
 }
+
+.nowrap {
+  flex-wrap: nowrap;
+}
 // Fin mixins
 
 .link {
   text-decoration: none;
   transition: color 0.5s;
+  color: $fakeblack;
   &:hover {
     text-decoration: underline;
     color: $primary;
@@ -69,36 +75,52 @@ header {
   max-width: 100%;
 }
 
-.navbar {
-  @extend .px-5;
-}
-
-.navbar a {
-  color: $fakeblack;
-}
-
-nav form input {
-  font-size: 2rem !important;
-}
-
-.navbar-prime {
-  width: 100%;
-  top: 0;
-  & ul {
-    margin: auto;
+nav form {
+  @extend .ml-2;
+  & input {
+    font-size: 1.3rem !important;
+  }
+  & button {
+    @extend .mx-1;
   }
 }
 
 .navbar-sec {
   & .nav-item {
-    @extend .px-2;
     @extend .py-1;
+    @extend .px-5;
+    @extend .mx-2;
+    @extend .my-2;
     background-color: $primary-faded;
   }
 }
 
-.nav-link {
-  @extend .mx-2;
+.navbar a.link-nav {
+  color: $fakeblack;
+  opacity: 0.7;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  &:hover {
+    text-decoration: underline;
+    opacity: 1;
+  }
+  &:active {
+    text-decoration: none;
+    opacity: 0.9;
+  }
+}
+
+.nav-item {
+  & * {
+    @extend .py-1;
+  }
+  & img {
+    @extend .mr-2;
+  }
+}
+
+.relative {
+  position: relative;
 }
 // Fin header
 
@@ -118,8 +140,18 @@ main {
   max-width: 100%;
 }
 
+main * {
+  max-width: 100%;
+}
+
 .logo {
   width: 3rem;
+}
+
+.navbar-prime {
+  & * {
+    @extend .my-md-5;
+  }
 }
 
 .carousel img {
@@ -158,4 +190,10 @@ main {
   @include center-text;
   color: $light;
 }
+
+.text {
+  color: $fakeblack;
+  line-height: 2rem;
+}
+
 // Fin main
