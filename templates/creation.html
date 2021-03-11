@@ -1,0 +1,179 @@
+{% extends "master.html" %}
+{% block title %}Création{% endblock %}
+
+{% block content %}
+
+<main>
+    <h1 class="h1">Création d'un personnage</h1>
+    <h3 class="ml-3">
+        <nav aria-label="FilAriane">
+            <ol class="breadcrumb bg-transparent">
+                <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Création</li>
+            </ol>
+        </nav>
+    </h3>
+    <div class="row py-lg-5 align-items-center p-3 justify-content-between">
+        <div class="row col-lg-2 w-100 p-0 m-1">
+            <!-- Bar Navigation -->
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-light navbar-prime flex-column align-self-start w-100 rounded shadow-lg">
+                <a class="link active my-lg-5" href="creation.html">Création</a>
+                <a class="link my-lg-5" href="personnages.html">Personnages</a>
+                <a class="link my-lg-5" href="pardefaut.html">Par défaut</a>
+            </nav>
+        </div>
+        <form class="col-lg align-self-start" action="http://philippefleury.com/backend.php" method="POST">
+            <div class="row d-flex col-lg align-items-start">
+                <fieldset class="col-lg mr-lg-2">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" class="form-control" id="name" aria-label="Nom du personnage" name="Nom"
+                            required="">
+
+                        <label for="role">Rôle</label>
+                        <select class="custom-select" name="Role" id="role" required="" aria-label="Role">
+                            <optgroup label="Soutien">
+                                <option value="s-homme">Homme</option>
+                                <option value="s-femme">Femme</option>
+                                <option value="s-humanoid">Humanoïd</option>
+                                <option value="s-robot">Robot</option>
+                                <option value="s-animal">Animal</option>
+                                <option value="s-extrat">Extraterrestre</option>
+                            </optgroup>
+                            <optgroup label="Dégâts">
+                                <option value="d-homme">Homme</option>
+                                <option value="d-femme">Femme</option>
+                                <option value="d-humanoid">Humanoïd</option>
+                                <option value="d-robot">Robot</option>
+                                <option value="d-animal">Animal</option>
+                                <option value="d-extrat">Extraterrestre</option>
+                            </optgroup>
+                            <optgroup label="Tank">
+                                <option value="t-homme">Homme</option>
+                                <option value="t-femme">Femme</option>
+                                <option value="t-humanoid">Humanoïd</option>
+                                <option value="t-robot">Robot</option>
+                                <option value="t-animal">Animal</option>
+                                <option value="t-extrat">Extraterrestre</option>
+                            </optgroup>
+                        </select>
+
+                        <label for="datalist" class="form-label">Type du personnage</label>
+                        <input class="form-control" list="datalistChoix" id="datalist" placeholder="Rechercher..."
+                            name="Type" required="" aria-label="Type">
+                        <datalist id="datalistChoix">
+                            <option value="Alchimiste">
+                            <option value="Archer">
+                            <option value="Artilleur">
+                            <option value="Assassin">
+                            <option value="Barbare">
+                            <option value="Berserker">
+                            <option value="Chevalier">
+                            <option value="Druide">
+                            <option value="Ensorceleur">
+                            <option value="Gobelin">
+                            <option value="Mage blanc">
+                            <option value="Mage noir">
+                            <option value="Morpheur">
+                            <option value="Pyromane">
+                            <option value="Samouraï">
+                        </datalist>
+                    </div>
+
+                    <div class="form-groupn mb-5">
+                        <label for="note" class="form-label">Difficulté</label>
+                        <div class="note">
+                            <input type="radio" id="etoile3" name="Difficulte" value="3" required=""
+                                aria-label="Très difficile" />
+                            <label class="full form-label" for="etoile3" title="Très difficile - 3 étoiles"></label>
+                            <input type="radio" id="etoile2.5" name="Difficulte" value="2.5" required=""
+                                aria-label="Difficile" />
+                            <label class="half form-label" for="etoile2.5" title="Difficile - 2.5 étoiles"></label>
+                            <input type="radio" id="etoile2" name="Difficulte" value="2" required=""
+                                aria-label="Moyennement difficile" />
+                            <label class="full form-label" for="etoile2"
+                                title="Moyennement difficile - 2 étoiles"></label>
+                            <input type="radio" id="etoile1.5" name="Difficulte" value="1.5" required=""
+                                aria-label="Légèrement difficile" />
+                            <label class="half form-label" for="etoile1.5"
+                                title="Légèrement difficile - 1.5 étoiles"></label>
+                            <input type="radio" id="etoile1" name="Difficulte" value="1" required=""
+                                aria-label="Facile" />
+                            <label class="full form-label" for="etoile1" title="Facile - 1 étoile"></label>
+                            <input type="radio" id="demiEtoile" name="Difficulte" value="0.5" required=""
+                                aria-label="Très Facile" />
+                            <label class="half form-label" for="demiEtoile" title="Très Facile - 0.5 étoiles"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="d-flex align-items-center">
+                            <label class="form-label mr-2 m-0" for="range">Âge</label>
+                            <input type="number" class="bg-transparent border-0 text-muted" id="age" value="0" max="100"
+                                min="0" step="1" oninput="updateSlide(this.value)" required="">
+                        </div>
+                        <input type="range" class="form-control-range w-50" name="Age" min="0" max="100" id="range"
+                            onchange="updateAge(this.value);" required="">
+                        <label for="pouvoirSpecial">Nom du pouvoir spécial</label>
+                        <input type="text" class="form-control" id="pouvoirSpecial" aria-label="Pouvoir special"
+                            name="PouvoirSpecial" required="">
+                    </div>
+                </fieldset>
+                <fieldset class="col-lg ml-lg-2">
+                    <label class="form-label" for="figure">Votre personnage créé</label>
+                    <div class="form-group">
+                        <figure class="figure w-50 position-relative">
+                            <img src="{{ url_for('static', filename='assets/img/heroes/maitre.png') }}" alt=""
+                                id="maitre">
+                            <object data="{{ url_for('static', filename='assets/img/heroes/character.svg') }}"
+                                type="image/svg+xml" class="figure-img img-fluid rounded" id="characterImg"></object>
+                            <figcaption class="figure-caption">Optionnel.</figcaption>
+                        </figure>
+                        <input class="form-control bg-transparent border-0 pl-0" type="file"
+                            accept=".jpg, .jpeg, .png, .tiff, .svg, .nef, .dng, .cr3, .arw" id="formFile" name="Fichier"
+                            aria-label="Image du personnage">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="phraseAccroche">Phrase d'acroche</label>
+                        <input type="text" class="form-control" id="phraseAccroche" aria-label="Phrase d'accroche"
+                            name="PhraseAccroche" required="">
+                        <small id="phraseAccrocheHelp" class="form-text text-muted">Doit être unique et correspondre au
+                            personnage.</small>
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="row d-flex justify-content-between py-3 px-2 m-0 mt-5 border-top border-dark w-100">
+                <button type="reset" class="btn btn-danger">Réinitialiser</button>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+                <button type="button" class="img-fluid" data-toggle="modal" data-target="#modalRandom"
+                    onclick="random()" title="Générateur aléatoire">
+                    <img src="{{ url_for('static', filename='assets/icons/dice-6.svg') }}" alt="">
+                </button>
+            </div>
+        </form>
+    </div>
+
+</main>
+
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" id="modalRandom">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Création d'un personnage aléatoire...</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

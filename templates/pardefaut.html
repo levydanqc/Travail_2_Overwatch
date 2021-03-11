@@ -1,0 +1,100 @@
+{% extends "master.html" %}
+{% block title %}Par défaut{% endblock %}
+
+{% block content %}
+<main>
+    <h1 class="h1">Personnage par défaut</h1>
+    <h3 class="ml-3">
+        <nav aria-label="FilAriane">
+            <ol class="breadcrumb bg-transparent">
+                <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Par défaut</li>
+            </ol>
+        </nav>
+    </h3>
+
+    <div class="row py-lg-5 align-items-center p-3 justify-content-between">
+        <div class="row col-2 w-100 p-0 m-1">
+            <!-- Bar Navigation -->
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-light navbar-prime flex-column align-self-start w-100 rounded shadow-lg">
+                <a class="link my-lg-5" href="creation.html">Création</a>
+                <a class="link my-lg-5" href="personnages.html">Personnages</a>
+                <a class="active my-lg-5" href="pardefaut.html">Par défaut</a>
+            </nav>
+        </div>
+
+        <div class="d-flex col flex-column w-100">
+            <div class="alert alert-danger">
+                Ceci est le personnage par défaut.
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <caption></caption>
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col" colspan="5" class="text-uppercase">Jesse McCree</th>
+                        </tr>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Dommage (pt)</th>
+                            <th scope="col">Distance (m)</th>
+                            <th scope="col">Durée (s)</th>
+                            <th scope="col">Recharge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Pacificateur</th>
+                            <td>Arme principale</td>
+                            <td>70</td>
+                            <td>40</td>
+                            <td>n/a</td>
+                            <td>1,2 s.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Pacificateur Secondaire</th>
+                            <td>Arme secondaire</td>
+                            <td>50</td>
+                            <td>40</td>
+                            <td>n/a</td>
+                            <td>1,2 s.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Roulade</th>
+                            <td>Spécialité</td>
+                            <td>n/a</td>
+                            <td>~7</td>
+                            <td>0.4</td>
+                            <td>6 s.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Grenade Flash</th>
+                            <td>Spécialité</td>
+                            <td>25</td>
+                            <td>7</td>
+                            <td>0.8</td>
+                            <td>10 s.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Implacable</th>
+                            <td>Capacité ultime</td>
+                            <td>100 à 550 /s.</td>
+                            <td>200</td>
+                            <td>6.2</td>
+                            <td>1680 pt.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+
+
+{% endblock %}

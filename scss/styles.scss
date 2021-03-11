@@ -6,37 +6,42 @@ $secondary: #43484c;
 $blue: #218ffe;
 $tertiary: #405275;
 $gray: #2d2f34;
-$light: #e9ecef;
+$light: #f0f7fce6;
 $fakeblack: #232323;
 $enable-responsive-font-sizes: true;
-
+$enable-shadows: true;
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 // FONTS
 @font-face {
-  src: url("../fonts/futura/futura\ light\ bt.ttf");
+  src: url("./fonts/futura_light.ttf");
   font-family: "Futura";
 }
 @font-face {
-  src: url("../fonts/big_noodle.ttf");
+  src: url("./fonts/big_noodle.ttf");
   font-family: "Bignoodle";
 }
 @font-face {
-  src: url("../fonts/big_noodle_oblique.ttf");
+  src: url("./fonts/big_noodle_oblique.ttf");
   font-family: "Bignoodle_Tilt";
 }
 // Fin fonts
 
 // Classes générales
-body {
-  background-image: url("../assets/img/background/background.jpg");
-  background-repeat: no-repeat;
-}
-
 body * {
   color: $fakeblack;
   font-family: "Futura";
   font-size: 1.1rem;
+}
+
+.h1 {
+  @extend .ml-3;
+  @extend .pt-3;
+  font-family: "Bignoodle";
+}
+
+.banniere {
+  width: 100%;
 }
 
 // Mixins
@@ -49,6 +54,27 @@ body * {
   flex-wrap: nowrap;
 }
 // Fin mixins
+
+// Fil Ariane
+li.breadcrumb-item {
+  a {
+    color: $gray-200;
+  }
+  &.active {
+    color: $gray-500;
+    &::before {
+      color: $gray-500;
+    }
+  }
+}
+
+// Fin fil ariane
+
+a.active {
+  text-decoration: underline;
+  color: $primary;
+  @extend .py-5;
+}
 
 .link {
   text-decoration: none;
@@ -138,6 +164,8 @@ nav form {
 // Main
 main {
   max-width: 100%;
+  background-image: url("./assets/img/background/background_tall.jpg");
+  background-repeat: no-repeat;
 }
 
 main * {
@@ -149,9 +177,7 @@ main * {
 }
 
 .navbar-prime {
-  & * {
-    @extend .my-md-5;
-  }
+  opacity: 0.8;
 }
 
 .carousel img {
@@ -211,13 +237,139 @@ footer {
     @extend .my-2;
   }
   & blockquote {
-    @extend .mt-5;
+    @extend .mt-3;
     @extend .mb-0;
     @extend .py-2;
   }
-  & section *{
-    @extend .mx-2;
+  & section * {
+    @extend .mx-1;
     width: 2.5rem;
   }
 }
 // Fin footter
+
+// Form
+
+// Difficulté
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+.note {
+  width: fit-content;
+}
+
+.note > input {
+  display: none;
+}
+.note > label:before {
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.note > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.note > label {
+  color: $light;
+  float: right;
+}
+
+.note > input:checked ~ label,
+.note:not(:checked) > label:hover,
+.note:not(:checked) > label:hover ~ label {
+  color: $primary;
+}
+
+.note > input:checked + label:hover,
+.note > input:checked ~ label:hover,
+.note > label:hover ~ input:checked ~ label,
+.note > input:checked ~ label:hover ~ label {
+  color: $primary-faded;
+}
+
+// Fin difficulté
+
+#maitre {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 86%;
+  opacity: 0;
+  padding-left: 3rem;
+}
+
+// Fin form
+
+// Cards
+
+.card {
+  width: 48%;
+  & .list {
+    list-style-image: url("./assets/icons/overwatch.svg");
+    list-style-position: inside;
+    & ul {
+      list-style: none;
+      @extend .ml-2;
+    }
+    & * {
+      @extend .text-truncate;
+    }
+  }
+  @media (max-width: 991px) {
+    width: 32%;
+  }
+}
+
+@keyframes apparition {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.card1 {
+  & div:first-child {
+    animation: apparition 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    & + div {
+      animation: apparition 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      animation-delay: 1s;
+    }
+  }
+}
+.card2 {
+  & div:first-child {
+    animation: apparition 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+    & + div {
+      animation: apparition 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      animation-delay: 3s;
+    }
+  }
+}
+
+// Fin cards
+
+// Table
+thead th {
+  @extend .text-center;
+}
+tbody td {
+  @extend .text-right;
+}
+// Fin table

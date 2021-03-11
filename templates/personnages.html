@@ -1,0 +1,140 @@
+{% extends "master.html" %}
+{% block title %}Personnages{% endblock %}
+
+{% block content %}
+<main>
+    <h1 class="h1">Personnages créés</h1>
+    <h3 class="ml-3">
+        <nav aria-label="FilAriane">
+            <ol class="breadcrumb bg-transparent">
+                <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Personnages</li>
+            </ol>
+        </nav>
+    </h3>
+
+    <div class="row py-lg-5 align-items-center p-3 justify-content-between">
+        <div class="row col-lg-2 w-100 p-0 m-1">
+            <!-- Bar Navigation -->
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-light navbar-prime flex-column align-self-start w-100 rounded shadow-lg">
+                <a class="link my-lg-5" href="creation.html">Création</a>
+                <a class="active my-lg-5" href="personnages.html">Personnages</a>
+                <a class="link my-lg-5" href="pardefaut.html">Par défaut</a>
+            </nav>
+        </div>
+        <div class="card1 row col-lg d-flex justify-content-around align-items-start">
+            <div class="card shadow-lg my-3 px-2">
+                <img src="{{ url_for('static', filename='assets/img/heroes/ashe.png') }}" class="card-img-top w-100"
+                    alt="">
+                <div class="card-body text-center">
+                    <h2 class="card-title text-uppercase">Ashe</h2>
+                    <ul class="card-text text-left pl-3 list">
+                        <li>Nom :</li>
+                        <ul>
+                            <li>Elizabeth Ashe</li>
+                        </ul>
+                        <li>Profession :</li>
+                        <ul>
+                            <li>Voleuse</li>
+                        </ul>
+                        <li>Base :</li>
+                        <ul>
+                            <li>Arizona, USA</li>
+                        </ul>
+                        <li>Affiliation :</li>
+                        <ul>
+                            <li>Deadlock</li>
+                        </ul>
+                    </ul>
+                    <a href="#" class="btn btn-primary stretched-link">Plus de détails</a>
+                </div>
+            </div>
+            <div class="card shadow-lg my-3 px-2">
+                <img src="{{ url_for('static', filename='assets/img/heroes/junkrat.png') }}" class="card-img-top w-100"
+                    alt="">
+                <div class="card-body text-center">
+                    <h2 class="card-title text-uppercase">Junkrat</h2>
+                    <ul class="card-text text-left pl-3 list">
+                        <li>Nom :</li>
+                        <ul>
+                            <li>Jamison Fawkes</li>
+                        </ul>
+                        <li>Profession :</li>
+                        <ul>
+                            <li>Anarchiste</li>
+                        </ul>
+                        <li>Base :</li>
+                        <ul>
+                            <li>Junkertown, AU</li>
+                        </ul>
+                        <li>Affiliation :</li>
+                        <ul>
+                            <li>Junkers</li>
+                        </ul>
+                    </ul>
+                    <a href="#" class="btn btn-primary stretched-link">Plus de détails</a>
+                </div>
+            </div>
+        </div>
+        <div class="card2 row col-lg d-flex justify-content-around align-items-start">
+            <div class="card shadow-lg my-3 px-2">
+                <img src="{{ url_for('static', filename='assets/img/heroes/mccree.png') }}" class="card-img-top w-100"
+                    alt="">
+                <div class="card-body text-center">
+                    <h2 class="card-title text-uppercase">McCree</h2>
+                    <ul class="card-text text-left pl-3 list">
+                        <li>Nom :</li>
+                        <ul>
+                            <li>Jesse McCree</li>
+                        </ul>
+                        <li>Profession :</li>
+                        <ul>
+                            <li>Chasseur de primes</li>
+                        </ul>
+                        <li>Base :</li>
+                        <ul>
+                            <li>Nouveau-Mexique, USA</li>
+                        </ul>
+                        <li>Affiliation :</li>
+                        <ul>
+                            <li>Overwatch</li>
+                        </ul>
+                    </ul>
+                    <a href="#" class="btn btn-primary stretched-link">Plus de détails</a>
+                </div>
+            </div>
+            <div class="card shadow-lg my-3 px-2">
+                <img src="{{ url_for('static', filename='assets/img/heroes/reaper.png') }}" class="card-img-top w-100"
+                    alt="">
+                <div class="card-body text-center">
+                    <h2 class="card-title text-uppercase">Reaper</h2>
+                    <ul class="card-text text-left pl-3 list">
+                        <li>Nom :</li>
+                        <ul>
+                            <li>Inconnu</li>
+                        </ul>
+                        <li>Profession :</li>
+                        <ul>
+                            <li>Mercenaire</li>
+                        </ul>
+                        <li>Base :</li>
+                        <ul>
+                            <li>Inconnue</li>
+                        </ul>
+                        <li>Affiliation :</li>
+                        <ul>
+                            <li>Inconnue</li>
+                        </ul>
+                    </ul>
+                    <a href="#" class="btn btn-primary stretched-link">Plus de détails</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+{% endblock %}
