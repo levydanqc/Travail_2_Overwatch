@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
   {% block head %}
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
   <script src="{{ url_for('static', filename='scripts.js') }}"></script>
-  <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" type="image/x-icon">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" type="image/x-icon" />
   <title>{% block title %}{% endblock %} - Overwatch</title>
   {% endblock %}
 </head>
@@ -18,11 +18,12 @@
 <body>
   <header>
 
-    <img src="{{ url_for('static', filename='assets/img/banner.jpg') }}" alt="Bannière Overwatch" class="banniere img-fluid">
+    <img src="{{ url_for('static', filename='assets/img/banner.jpg') }}" alt="Bannière Overwatch"
+      class="banniere img-fluid" />
 
     <nav class="navbar navbar-expand-md navbar-light bg-light navbar-sec" id="navbar-sec">
       <a class="link navbar-brand mr-5" href="/">
-        <img src="{{ url_for('static', filename='assets/favicon.svg') }}" alt="Logo" class="logo">
+        <img src="{{ url_for('static', filename='assets/favicon.svg') }}" alt="Logo d'Overwatch" class="logo" />
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSoutienedContent"
         aria-controls="navbarSoutienedContent" aria-expanded="false" aria-label="Menu Navigation">
@@ -32,26 +33,27 @@
       <div class="justify-content-between collapse navbar-collapse" id="navbarSoutienedContent">
         <form class="form-inline my-2 my-lg-0 pl-3 pl-md-0">
           <div class="row nowrap">
-            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
-            <button type="button" class="btn btn-primary m-0" data-toggle="modal" data-target="#modal">
-              <img src="{{ url_for('static', filename='assets/icons/search.svg') }}" alt="">
+            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher" />
+            <button type="button" class="btn btn-primary m-0" data-toggle="modal" data-target="#modal"
+              aria-label="Recherche">
+              <img src="{{ url_for('static', filename='assets/icons/search.svg') }}" alt="" />
             </button>
           </div>
         </form>
         <ul class="navbar-nav">
           <li class="nav-item rounded">
             <div class="row relative justify-content-center justify-content-md-left">
-              <img src="{{ url_for('static', filename='assets/icons/share.svg') }}" alt="" class="img-fluid">
+              <img src="{{ url_for('static', filename='assets/icons/share.svg') }}" alt="Partager" class="img-fluid" />
               <a class="link-nav stretched-link" href="#">Partager</a>
             </div>
           </li>
           <li class="nav-item rounded">
             <div class="row relative justify-content-center justify-content-md-left">
-              <img src="{{ url_for('static', filename='assets/icons/account.svg') }}" alt="" class="img-fluid">
+              <img src="{{ url_for('static', filename='assets/icons/account.svg') }}" alt="Connexion"
+                class="img-fluid" />
               <a class="link-nav stretched-link" href="#">Connexion</a>
           </li>
-      </div>
-      </ul>
+        </ul>
       </div>
     </nav>
   </header>
@@ -66,13 +68,13 @@
     </div>
     <blockquote class="blockquote text-center">
       <p class="mb-0">« Une dernière volonté ? »</p>
-      <footer class="blockquote-footer">McCree</footer>
+      <p class="blockquote-footer">McCree</p>
     </blockquote>
     <section class="w-100 mt-3 py-2">
-      <a href="#"><img src="{{ url_for('static', filename='assets/icons/facebook.svg') }}" alt="Facebook"></a>
-      <a href="#"><img src="{{ url_for('static', filename='assets/icons/instagram.svg') }}" alt="Instagram"></a>
-      <a href="#"><img src="{{ url_for('static', filename='assets/icons/twitter.svg') }}" alt="Twitter"></a>
-      <a href="#"><img src="{{ url_for('static', filename='assets/icons/github.svg') }}" alt="Github"></a>
+      <a href="#"><img src="{{ url_for('static', filename='assets/icons/facebook.svg') }}" alt="Facebook" /></a>
+      <a href="#"><img src="{{ url_for('static', filename='assets/icons/instagram.svg') }}" alt="Instagram" /></a>
+      <a href="#"><img src="{{ url_for('static', filename='assets/icons/twitter.svg') }}" alt="Twitter" /></a>
+      <a href="#"><img src="{{ url_for('static', filename='assets/icons/github.svg') }}" alt="Github" /></a>
 
     </section>
   </footer>
